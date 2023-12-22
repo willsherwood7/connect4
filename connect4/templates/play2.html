@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Play
+{% endblock %}
+
+{% block main %}
+<div class="board">
+    <table>
+        <tbody>
+            {% for row_index, row in enumerated_board) %}
+                <tr>
+                    {% for col_index, spot in row %}
+                        <td class="{% if spot == 1 %}redgame{% elif spot == 2 %}yellowgame{% else %}white{% endif %}">
+                            <!-- Each cell is a form -->
+                            <form action="/play" method="post" class="cell-form">
+                                <input type="hidden" name="column" value="{{ col_index }}">
+                                <input type="hidden" name="row" value="{{ row_index }}">
+                                <!-- Include CSRF token if using Flask-WTF -->
+                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                            </form>
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Add a click event listener to the table
+    document.querySelector('table').addEventListener('click', function(event) {
+        // Check if the clicked element is within a form
+        let cellForm = event.target.closest('.cell-form');
+        if (cellForm) {
+            cellForm.submit();
+        }
+    });
+</script>
+{% endblock %}

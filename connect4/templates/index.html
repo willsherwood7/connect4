@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <form action="/" method="post">
+        <h1><b>WELCOME TO CONNECT 4</b></h1>
+        <hr></hr>
+        <h3>Select Settings:</h3>
+        <div class="mb-3">
+            <p><b>How many players?</b></p>
+              <input type="radio" id="one" name="players" value="1" required>
+              <label for="one">1 Player (vs. CPU)</label>
+              <input class="right_button" type="radio" id="two" name="players" value="2">
+              <label for="two">2 Players</label>
+        </div>
+        <!-- <hr></hr> -->
+        <div class = "mb-3" id="cpuDifficulty" style="display: none;">
+            <p><b>How hard do you want the CPU to be?</b></p>
+            <div class="mb-3">
+              <input type="radio" id="easy" name="difficulty" value="1">
+              <label for="easy">Easy</label>
+              <input class="right_button" type="radio" id="medium" name="difficulty" value="2">
+              <label for="medium">Medium</label>
+              <input class="right_button" type="radio" id="hard" name="difficulty" value="3">
+              <label for="hard">Hard</label>
+              <input class="right_button" type="radio" id="insane" name="difficulty" value="4">
+              <label for="insane">Insane</label>
+            </div>
+            <div class="mb-3">
+              <button class="btn btn-primary" type="submit">Play</button>
+            </div>
+        </div>
+
+        <div id="login" style="display: none;">
+            <p><b>User 2 login information</b></p>
+            <div class="mb-3">
+              <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+            </div>
+            <div class="mb-3">
+              <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+            </div>
+            <div class="mb-3">
+              <button class="btn btn-primary" type="submit">Play</button>
+            </div>
+        </div>
+        <hr></hr>
+        <img src="../static/aiphoto.png" alt="Connect4">
+    </form>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    document.getElementsByName('players').forEach((radio) => {
+      radio.addEventListener('change', (event) => {
+        if (event.target.value === '1') {
+          document.getElementById('cpuDifficulty').style.display = 'block';
+          document.getElementById('login').style.display = 'none';
+        } else if (event.target.value === '2') {
+          document.getElementById('cpuDifficulty').style.display = 'none';
+          document.getElementById('login').style.display = 'block';
+        }
+      });
+    });
+  });
+</script>
+{% endblock %}

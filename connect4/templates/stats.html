@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stats
+{% endblock %}
+
+{% block main %}
+<div class="data">
+    <table>
+        {% for stat in stats %}
+            <h2><b>{{ stat.username }}'s lifetime stats:</b></h2>
+        {% endfor %}
+         <thead>
+            <tr class="header">
+                <th id="rating" class="text-center">Rating</th>
+                <th id="wins" class="text-center">Wins</th>
+                <th id="losses" class="text-center">Losses</th>
+                <th id="ties" class="text-center">Ties</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stat in stats %}
+                <tr>
+                    <td>{{ stat.rating }}</td>
+                    <td>{{ stat.wins }}</td>
+                    <td>{{ stat.losses }}</td>
+                    <td>{{ stat.ties }}</td>
+                </tr>
+            {% endfor %}
+         </tbody>
+    </table>
+</div>
+{% endblock %}
