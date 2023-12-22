@@ -1,5 +1,3 @@
-#connect4
-
 Made for CS50 at Harvard's final project
 
 Here is the link to our YouTube video: https://www.youtube.com/watch?v=1zWkhVZ0riY
