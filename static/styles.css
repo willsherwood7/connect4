@@ -1,0 +1,203 @@
+/* Size for CS50nnect 4 brand */
+nav .navbar-brand {
+    font-size: xx-large;
+}
+
+/* Colors for CS50nnect 4 brand */
+nav .navbar-brand .blue {
+    color: #326af1;
+}
+
+nav .navbar-brand .red {
+    color: #d61915;
+}
+
+nav .navbar-brand .yellow {
+    color: #f2c111;
+}
+
+/* Style for line separator */
+hr {
+    border: none; /* Remove the default border */
+    height: 100px; /* Set the height of the line */
+    background-color: #242526; /* Set the line color */
+    width: 20%; /* Set the width of the line to half of its container's width */
+    margin-left: auto; /* Center the line horizontally */
+    margin-right: auto;
+    margin-top: 30px; /* Add more space above the line */
+    margin-bottom: 30px; /* Add more space below the line */
+}
+
+/* CSS FOR index.html */
+
+h3 {
+    margin-bottom: 10px;
+}
+
+/* Style connect4 home page image */
+img {
+    width: 25%;
+    border: 5px solid black;
+}
+
+/* Add spacing to game settings radio buttons on index.html */
+input[type="radio"] {
+    margin-right: .3%;
+}
+
+.right_button {
+    margin-left: 2%;
+}
+
+/* CSS FOR play.html */
+
+/* Style for Connect 4 board */
+.board table {
+    border-spacing: 0;
+    border: 10px;
+    background-color: #326af1; /* Blue background */
+    border-collapse: separate;
+    border-spacing: 5px; /* Adjust the spacing between circles */
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.board td {
+    width: 50px; /* Width of the circle */
+    height: 50px; /* Height of the circle */
+    border-radius: 50%; /* Make the td elements circular */
+}
+
+/* Colors for red and yellow tokens */
+.redgame {
+    background-color: #d61915;
+}
+
+.yellowgame {
+    background-color: #f2d011;
+}
+
+.white {
+    background-color: white;
+}
+
+/* Style for circle that follows the cursor when playing */
+#circle {
+    position: absolute;
+    width: 20px; /* Circle size */
+    height: 20px; /* Circle size */
+    border-radius: 50%; /* Makes it round */
+    pointer-events: none; /* Allows click-through */
+    transform: translate(-50%, -50%); /* Centers the circle on the cursor */
+    z-index: 1000; /* High value to ensure it's on top */
+}
+
+/* Drop here button base styling */
+.drop-button {
+    background-color: #2854c0;
+    color: #ECECEC;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  /* Hover effect */
+  .drop-button:hover {
+    /* background-color: #007bff; A darker shade of blue */
+    transform: translateY(-8px); /* Moves the button up slightly */
+  }
+
+  /* Disabled state */
+  .drop-button:disabled {
+    background-color: #6c757d; /* Bootstrap secondary color */
+    cursor: not-allowed;
+  }
+
+/* Allows text telling user who's turn it is to change color */
+.redtext {
+    color: #d61915;
+}
+
+.yellowtext {
+    color: #f2d011;
+}
+
+/* Make return home and play again buttons invisible */
+#specialButton {
+    display: none; /* Button is invisible by default */
+}
+
+#specialButton.visible {
+    display: block; /* Button is visible when it has the 'visible' class */
+}
+
+/* Style for return and play again buttons */
+.blue-button {
+    background-color: #326af1; /* Blue background */
+    border: none; /* No border */
+    color: white; /* White text */
+    padding: 10px 20px; /* Some padding */
+    text-align: center; /* Centered text */
+    text-decoration: none; /* No underline */
+    display: inline-block; /* Necessary for dimensions */
+    font-size: 16px; /* Set a font-size */
+    margin: 20px 10px; /* Some margin */
+    transition-duration: 0.4s; /* Smooth transition for hover effect */
+    cursor: pointer; /* Pointer/hand icon */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px #999; /* Add a shadow */
+}
+
+/* Add a hover effect */
+.blue-button:hover {
+
+    transform: translateY(-2px); /* Slightly raise the button */
+}
+
+/* Add an active/click effect */
+.blue-button:active {
+    background-color: #0056b3;
+    transform: translateY(4px); /* Push the button down */
+}
+
+/* CSS FOR stats.html & history.html */
+
+/* Style for tables on larger screens */
+.data table,
+.data td,
+.data th {
+    padding: 10px;
+    table-layout: fixed;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    border: 2px solid black;
+}
+
+/* Specific style for stats & history headers and footers */
+#rating, #opponent {
+    background-color: #659dff;
+}
+
+#wins {
+    background-color: #53c953;
+}
+
+#losses, #time {
+    background-color: #e25654;
+}
+
+#ties, #result {
+    background-color: #f2d011;
+}
+
+/* Style for tables on smaller screens */
+@media screen and (max-width: 600px) {
+    table {
+        width: 100%;
+        table-layout: auto;
+        font-size: 14px;
+    }
+}

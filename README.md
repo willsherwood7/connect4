@@ -1,6 +1,3 @@
-# connect4
-Created for CS50 at Harvard's final project
-
 Here is the link to our YouTube video: https://www.youtube.com/watch?v=1zWkhVZ0riY
 
 We created a website that allows you to play Connect 4 in both a two-player format and a single player format. The single player format means that you are competing against a bot that makes its move immediately after ours.
